@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <title>Bienvenido al Magdalena</title>
     <style>
         body {
@@ -12,20 +12,16 @@
             margin: 0;
             padding: 0;
         }
- header {
-    background-color: #1e90ff; 
-    color: white;             
-    padding: 30px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
-}
-
-
-
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
         main {
             padding: 30px 15px;
             max-width: 1000px;
@@ -36,7 +32,11 @@ header h1 {
             margin-bottom: 40px;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .pueblo.active {
+            display: block;
         }
         h2 {
             font-size: 42px;
@@ -52,7 +52,6 @@ header h1 {
             margin-top: 30px;
             margin-bottom: 15px;
             text-align: left;
-            
         }
         ol {
             padding-left: 20px;
@@ -74,6 +73,25 @@ header h1 {
             margin-top: 60px;
             font-size: 14px;
         }
+        #contextMenu {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px;
+            z-index: 1000;
+            min-width: 160px;
+        }
+        #contextMenu li {
+            padding: 8px 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+        #contextMenu li:hover {
+            background-color: #e4e4e4;
+        }
     </style>
 </head>
 <body>
@@ -81,9 +99,21 @@ header h1 {
         <h1>Conoce y visita estos pueblos del Magdalena</h1>
     </header>
 
+    <p id="bienvenida" style="text-align:center; font-size:24px; margin: 40px 0;">
+        Bienvenido al Magdalena, usa el menú contextual (clic derecho) para explorar los pueblos.
+    </p>
+
     <main>
-        <section class="pueblo">
+        <section class="pueblo" id="aracataca">
             <h2>Aracataca</h2>
+
+            <h3>¿Por qué visitar Aracataca?</h3>
+            <p>
+                Visitar Aracataca es sumergirse en el mundo mágico de Gabriel García Márquez, donde la realidad y la fantasía conviven. 
+                Este pueblo colombiano ofrece una experiencia cultural única, con paisajes caribeños, historia literaria y el calor de su gente. 
+                Es el lugar ideal para quienes buscan conectar con la esencia del Caribe y con los orígenes del Nobel de Literatura.
+            </p>
+
             <h3>Sitios de Interés</h3>
             <ol>
                 <li><strong>Casa Museo Gabriel García Márquez:</strong> Representación de la infancia del Nobel de Literatura.</li>
@@ -92,7 +122,7 @@ header h1 {
                 <li><strong>Iglesia San José de Aracataca:</strong> Sitio emblemático de la comunidad.</li>
             </ol>
 
-            <h3>Restaurante recomendados</h3>
+            <h3>Restaurantes recomendados</h3>
             <ol>
                 <li><strong>La Casona de Gabo</strong></li>
                 <li><strong>Café La Esquina del Realismo Mágico</strong></li>
@@ -104,22 +134,27 @@ header h1 {
                 <li><strong>Gabriel García Márquez</strong></li>
                 <li><strong>Nicolás Ricardo Márquez Mejía</strong></li>
             </ol>
-<br>
-            <hr>
-         <div>
-    <center>
-        <h3>Un video representativo de Aracataca</h3>
-        <video autoplay loop controls width="800" height="380">
-            <source src="Aracataca.mp4" type="video/mp4">
-            <source src="Aracataca.ogg" type="video/ogg">
-        </video>
-    </center>
-</div>
-
+            <br />
+            <hr />
+            <div>
+                <center>
+                    <h3>Un video representativo de Aracataca</h3>
+                    <video autoplay loop controls width="800" height="380">
+                        <source src="Aracataca.mp4" type="video/mp4" />
+                        <source src="Aracataca.ogg" type="video/ogg" />
+                    </video>
+                </center>
+            </div>
         </section>
 
-        <section class="pueblo">
+        <section class="pueblo" id="reten">
             <h2>Retén</h2>
+
+            <h3>¿Por qué visitar Retén?</h3>
+            <p>
+                El Retén es un encantador municipio del Magdalena que combina tradición, naturaleza y hospitalidad. Rodeado de paisajes agrícolas y atravesado por caños y ríos, ofrece al visitante una experiencia auténtica del Caribe colombiano. Su gente amable, sus festividades tradicionales y su ambiente tranquilo lo convierten en un destino ideal para quienes buscan desconexión, cultura local y contacto con la naturaleza.
+            </p>
+
             <h3>Sitios de Interés</h3>
             <ol>
                 <li><strong>Iglesia San Juan Bautista:</strong> Construida en 1953, es un símbolo religioso y cultural del municipio.</li>
@@ -138,73 +173,171 @@ header h1 {
                 <li><strong>José Luis Caballero</strong></li>
                 <li><strong>Leonardo Vega</strong></li>
             </ol>
-            <br>
-            <hr>
-<div>
-    <center>
-        <h3>Un video representativo de Retén</h3>
-        <video autoplay loop controls width="800" height="380">
-            <source src="Reten.mp4" type="video/mp4">
-            <source src="Reten.ogg" type="video/ogg">
-        </video>
-    </center>
-</div>
-
+            <br />
+            <hr />
+            <div>
+                <center>
+                    <h3>Un video representativo de Retén</h3>
+                    <video autoplay loop controls width="800" height="380">
+                        <source src="Reten.mp4" type="video/mp4" />
+                        <source src="Reten.ogg" type="video/ogg" />
+                    </video>
+                </center>
+            </div>
         </section>
 
-       <section class="pueblo">
-    <h2>Fundación</h2>
-    <h3>Sitios de Interés</h3>
-    <ol>
-        <li><strong>Iglesia San Rafael Arcángel:</strong> Uno de los monumentos más visitados.</li>
-        <li><strong>Casa de la Cultura:</strong> Escenario de presentaciones artísticas y formación cultural.</li>
-        <li><strong>Parque Central:</strong> Lugar de encuentro para eventos y actividades comunitarias.</li>
-        <li><strong>Malecón del Río Fundación:</strong> Espacio para paseos y actividades recreativas junto al río.</li>
-    </ol>
+        <section class="pueblo" id="fundacion">
+            <h2>Fundación</h2>
 
-    <h3>Restaurantes recomendados</h3>
-    <ol>
-        <li><strong>Restaurante La Fogata</strong></li>
-        <li><strong>Comedor El Sabor Fundanense</strong></li>
-        <li><strong>Café Cultural La Esquina</strong></li>
-    </ol>
+            <h3>¿Por qué visitar Fundación?</h3>
+            <p>
+                Fundación, conocida como la “Esquina del Progreso”, es un municipio clave del Magdalena con una rica historia, cultura vibrante y un fuerte sentido de identidad caribeña. Su estratégica ubicación la convierte en un punto de conexión entre pueblos y regiones. Visitar Fundación es descubrir tradiciones musicales como el vallenato, disfrutar de su gastronomía típica, recorrer sus calles llenas de vida y conocer a una comunidad trabajadora y acogedora que enorgullece a la región.
+            </p>
 
-    <h3>Personajes Importantes</h3>
-    <ol>
-        <li><strong>María Teresa Peña</strong></li>
-        <li><strong>Carlos Enrique Rodríguez</strong></li>
-        <li><strong>Juan Pablo Gómez</strong></li>
-    </ol>
+            <h3>Sitios de Interés</h3>
+            <ol>
+                <li><strong>Iglesia San Rafael Arcángel:</strong> Uno de los monumentos más visitados.</li>
+                <li><strong>Casa de la Cultura:</strong> Escenario de presentaciones artísticas y formación cultural.</li>
+                <li><strong>Parque Central:</strong> Lugar de encuentro para eventos y actividades comunitarias.</li>
+                <li><strong>Malecón del Río Fundación:</strong> Espacio para paseos y actividades recreativas junto al río.</li>
+            </ol>
 
-    <br>
-    <hr>
-    <div class="video-container">
-    <h3>Un video representativo de Fundación</h3>
-    <video  autoplay loop controls width="800" height="380">
-        <source src="Fundaa.mp4" type="video/mp4">
-        <source src="Fundaa.ogg" type="video/ogg">
-       
-    </video>
-</div>
+            <h3>Restaurantes recomendados</h3>
+            <ol>
+                <li><strong>Restaurante La Fogata</strong></li>
+                <li><strong>Comedor El Sabor Fundanense</strong></li>
+                <li><strong>Café Cultural La Esquina</strong></li>
+            </ol>
 
-</section>
-
+            <h3>Personajes Importantes</h3>
+            <ol>
+                <li><strong>Juan de la Cruz</strong></li>
+                <li><strong>María Elena García</strong></li>
+            </ol>
+            <br />
+            <hr />
+            <div>
+                <center>
+                    <h3>Un video representativo de Fundación</h3>
+                    <video autoplay loop controls width="800" height="380">
+                        <source src="Fundacion.mp4" type="video/mp4" />
+                        <source src="Fundacion.ogg" type="video/ogg" />
+                    </video>
+                </center>
+            </div>
+        </section>
     </main>
 
     <footer>
-     Hecho por José Nicolas Amastha y Mariana Marrugo
+        <p>&copy; 2025 Información de pueblos del Magdalena.</p>
     </footer>
 
-    <script>
-    document.querySelectorAll('video').forEach(video => {
-        video.addEventListener('mouseenter', () => {
-            video.play();
-        });
-        video.addEventListener('mouseleave', () => {
-            video.pause();
-        });
-    });
-</script>
+    <ul id="contextMenu"></ul>
 
+    <script>
+        const contextMenu = document.getElementById('contextMenu');
+        const pueblos = [
+            { id: 'aracataca', nombre: 'Aracataca' },
+            { id: 'reten', nombre: 'Retén' },
+            { id: 'fundacion', nombre: 'Fundación' }
+        ];
+
+        let menuEstado = 'principal';
+        let puebloActivo = null;
+
+        function cargarMenu() {
+            contextMenu.innerHTML = '';
+
+            if (menuEstado === 'principal') {
+                pueblos.forEach(({ id, nombre }) => {
+                    const li = document.createElement('li');
+                    li.textContent = nombre;
+                    li.onclick = () => {
+                        mostrarSeccion(id);
+                        puebloActivo = id;
+                        menuEstado = 'detalle';
+                        contextMenu.style.display = 'none';
+                        cargarMenu();
+                    };
+                    contextMenu.appendChild(li);
+                });
+            } else if (menuEstado === 'detalle') {
+                pueblos
+                    .filter(({ id }) => id !== puebloActivo)
+                    .forEach(({ id, nombre }) => {
+                        const li = document.createElement('li');
+                        li.textContent = nombre;
+                        li.onclick = () => {
+                            mostrarSeccion(id);
+                            puebloActivo = id;
+                            contextMenu.style.display = 'none';
+                            cargarMenu();
+                        };
+                        contextMenu.appendChild(li);
+                    });
+
+                const liRegresar = document.createElement('li');
+                liRegresar.textContent = 'Regresar';
+                liRegresar.onclick = () => {
+                    regresarOcultarTodo();
+                    puebloActivo = null;
+                    menuEstado = 'principal';
+                    contextMenu.style.display = 'none';
+                    cargarMenu();
+                };
+                contextMenu.appendChild(liRegresar);
+            }
+        }
+
+        document.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            cargarMenu();
+            contextMenu.style.display = 'block';
+
+            const clickX = event.pageX;
+            const clickY = event.pageY;
+            const menuWidth = contextMenu.offsetWidth;
+            const menuHeight = contextMenu.offsetHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            let left = clickX;
+            let top = clickY;
+
+            if (clickX + menuWidth > windowWidth) {
+                left = windowWidth - menuWidth - 10;
+            }
+            if (clickY + menuHeight > windowHeight) {
+                top = windowHeight - menuHeight - 10;
+            }
+
+            contextMenu.style.left = `${left}px`;
+            contextMenu.style.top = `${top}px`;
+        });
+
+        document.addEventListener('click', () => {
+            contextMenu.style.display = 'none';
+        });
+
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.pueblo').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            const sec = document.getElementById(id);
+            if (sec) sec.classList.add('active');
+            document.getElementById('bienvenida').style.display = 'none';
+            puebloActivo = id;
+        }
+
+        function regresarOcultarTodo() {
+            document.querySelectorAll('.pueblo').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            document.getElementById('bienvenida').style.display = 'block';
+            puebloActivo = null;
+        }
+
+        cargarMenu();
+    </script>
 </body>
 </html>
